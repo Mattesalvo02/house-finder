@@ -1,0 +1,143 @@
+.card-detail-page {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 20px;
+  font-family: "Arial", sans-serif;
+
+  h1 {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 1rem;
+    font-weight: 600;
+    text-align: center;
+  }
+
+  .image-gallery {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem;
+
+    img {
+      width: 100%;
+      height: auto;
+      max-height: 400px;
+      object-fit: cover;
+      border-radius: 8px;
+      border: 2px solid #ddd;
+      margin-bottom: 1rem;
+    }
+
+    .prev-button,
+    .next-button {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(0, 0, 0, 0.6);
+      border: none;
+      color: white;
+      font-size: 2rem;
+      cursor: pointer;
+      padding: 0.5rem;
+      border-radius: 50%;
+      z-index: 1;
+      transition: background 0.3s;
+    }
+
+    .prev-button {
+      left: 10px;
+    }
+
+    .next-button {
+      right: 10px;
+    }
+
+    .prev-button:hover,
+    .next-button:hover {
+      background: rgba(0, 0, 0, 0.8);
+    }
+  }
+
+  .details-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    margin-bottom: 1rem;
+
+    @media (max-width: 768px) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .details-grid p {
+    font-size: 1rem;
+    color: #666;
+    line-height: 1.4;
+    margin-bottom: 0.5rem;
+
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+
+    strong {
+      color: #333;
+    }
+  }
+
+  .edit-delete-buttons,
+  .contact-seller {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-top: 1rem;
+
+    @media (max-width: 768px) {
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+  }
+
+  .edit-button,
+  .delete-button,
+  .contact-button {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    transition: background-color 0.3s;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+
+  .edit-button {
+    background-color: #28a745;
+
+    &:hover {
+      background-color: #218838;
+    }
+  }
+
+  .delete-button {
+    background-color: #dc3545;
+
+    &:hover {
+      background-color: #c82333;
+    }
+  }
+
+  .contact-button {
+    background-color: #007bff;
+
+    &:hover {
+      background-color: #0056b3;
+    }
+  }
+}

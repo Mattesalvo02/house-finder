@@ -1,0 +1,101 @@
+.cards-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  background-color: #f4f4f4;
+
+  .page-title {
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 2rem;
+    text-align: center;
+  }
+
+  .cards-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.5rem;
+    width: 100%;
+    max-width: 1200px;
+    padding: 0 20px;
+  }
+
+  .cards-container a {
+    text-decoration: none;
+  }
+}
+
+.card {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+  .card-image {
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+    position: relative;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  .card-content {
+    padding: 20px;
+
+    h2 {
+      font-size: 1.75rem;
+      color: #333;
+      margin-bottom: 1rem;
+      font-weight: 600;
+    }
+
+    .card-info {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1rem;
+
+      .card-status {
+        font-size: 1rem;
+        font-weight: 500;
+        color: #007bff;
+      }
+
+      .card-city {
+        font-size: 1rem;
+        font-weight: 400;
+        color: #555;
+      }
+
+      .card-price {
+        font-size: 1.25rem;
+        font-weight: 600;
+        color: #28a745;
+      }
+    }
+
+    .card-description {
+      font-size: 0.875rem;
+      color: #666;
+      line-height: 1.5;
+    }
+  }
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  }
+
+  // levo sottolineature
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+}
