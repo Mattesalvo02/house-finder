@@ -1,10 +1,10 @@
-import React, { useState, useEffect } from 'react';
-import { getDatabase, ref, onValue } from 'firebase/database';
-import { app } from '../../Firebase/firebaseConfig'; // Assicurati che questo percorso sia corretto
-import Card from '../../Components/Card/Card'; // Assicurati che il percorso sia corretto
-import SearchBar from '../../Components/SearchBar/SearchBar'; // Assicurati che il percorso sia corretto
-import { Link } from 'react-router-dom';
-import './CardsPage.scss';
+import React, { useState, useEffect } from "react";
+import { getDatabase, ref, onValue } from "firebase/database";
+import { app } from "../../Firebase/firebaseConfig"; // Assicurati che questo percorso sia corretto
+import Card from "../../Components/Card/Card"; // Assicurati che il percorso sia corretto
+import SearchBar from "../../Components/SearchBar/SearchBar"; // Assicurati che il percorso sia corretto
+import { Link } from "react-router-dom";
+import "./CardsPage.scss";
 
 type HouseDetails = {
   id: string;
@@ -30,24 +30,28 @@ const CardsPage = () => {
   const database = getDatabase(app);
 
   useEffect(() => {
-    const housesRef = ref(database, 'houses');
-    const unsubscribe = onValue(housesRef, (snapshot) => {
-      const data = snapshot.val();
-      if (data) {
-        const housesArray = Object.keys(data).map(key => ({
-          ...data[key],
-          id: key,
-        }));
-        setHouses(housesArray);
-        setFilteredHouses(housesArray);
-      } else {
-        setHouses([]);
-        setFilteredHouses([]);
+    const housesRef = ref(database, "houses");
+    const unsubscribe = onValue(
+      housesRef,
+      (snapshot) => {
+        const data = snapshot.val();
+        if (data) {
+          const housesArray = Object.keys(data).map((key) => ({
+            ...data[key],
+            id: key,
+          }));
+          setHouses(housesArray);
+          setFilteredHouses(housesArray);
+        } else {
+          setHouses([]);
+          setFilteredHouses([]);
+        }
+      },
+      (error) => {
+        setError("Failed to fetch houses.");
+        console.error("Error fetching houses:", error);
       }
-    }, (error) => {
-      setError('Failed to fetch houses.');
-      console.error('Error fetching houses:', error);
-    });
+    );
 
     return () => unsubscribe();
   }, [database]);

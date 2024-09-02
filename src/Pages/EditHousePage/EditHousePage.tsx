@@ -9,7 +9,7 @@ import {
 } from "firebase/storage";
 import { app } from "../../Firebase/firebaseConfig";
 import "./EditHousePage.scss";
-import { HouseDetails } from "../../Type/HouseDetails";
+import { HouseDetails } from "../../types/HouseDetails";
 
 function EditHousePage() {
   const { id } = useParams<{ id: string }>();

@@ -4,7 +4,7 @@ import { getDatabase, ref, get, remove } from "firebase/database";
 import { app } from "../../Firebase/firebaseConfig";
 import { useAuth } from "../../Stores/AuthContext";
 import "./CardDetailPage.scss";
-import { HouseDetails } from "../../Type/HouseDetails";
+import { HouseDetails } from "../../types/HouseDetails";
 
 function CardDetailPage() {
   const { id } = useParams<{ id: string }>(); // prendo l'id dal parametro del url

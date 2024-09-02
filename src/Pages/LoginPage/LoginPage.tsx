@@ -12,9 +12,7 @@ import "./LoginPage.scss"; // Importa il file SCSS
 import { getDatabase, ref, get, set } from "firebase/database";
 import { askNotificationPermission } from "../../Components/NotificationServer/NotificationServer";
 
-type Props = {};
-
-const LoginPage = (props: Props) => {
+function LoginPage() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState<string | null>(null);

@@ -7,7 +7,7 @@ import "./ProfilePage.scss";
 import defaultProfile from "../../Assets/defaultProfile.png";
 import Card from "../../Components/Card/Card";
 import { Link } from "react-router-dom";
-import { HouseDetails } from "../../Type/HouseDetails";
+import { HouseDetails } from "../../types/HouseDetails";
 
 type Chat = {
   chatId: string;
